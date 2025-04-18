@@ -34,16 +34,125 @@
 
         .logo-container {
             max-width: 300px;
+            position: relative;
+            cursor: pointer;
         }
+
         .logo {
             width: 100%;
             height: auto;
+        }
+
+        .hover-message {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            margin-left: 20px;
+            background-color: #1e1e1e;
+            color: #f8f8f8;
+            padding: 12px 15px;
+            border-radius: 6px;
+            width: 280px;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 100;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            border: 1px solid #505050;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            line-height: 1.4;
+        }
+
+        .hover-message:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            transform: none;
+            border-width: 10px 10px 10px 0;
+            border-style: solid;
+            border-color: transparent #1e1e1e transparent transparent;
+        }
+
+        .logo-container:hover .hover-message {
+            opacity: 1;
+        }
+
+        /* Mobile touch support */
+        @media (max-width: 768px) {
+            .logo-container {
+                max-width: 250px;
+            }
+
+            .hover-message {
+                width: 240px;
+                left: 100%;
+                margin-left: 15px;
+                top: 0;
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            /* Make tooltip visible on touch for mobile */
+            .logo-container:active .hover-message {
+                opacity: 1;
+            }
+
+            /* Add this to properly size the touch area */
+            .logo-container {
+                padding: 15px;
+                margin: -15px;
+            }
+        }
+
+        /* Small screens */
+        @media (max-width: 600px) {
+            .hover-message {
+                position: absolute;
+                width: 220px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 100%;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+
+            .hover-message:after {
+                bottom: auto;
+                top: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 0 10px 10px 10px;
+                border-color: transparent transparent #1e1e1e transparent;
+            }
         }
     </style>
 </head>
 <body>
     <div class="logo-container">
+        <div class="hover-message"><span style="color: #569cd6;">function</span> <span style="color: #dcdcaa;">TunedTensor</span>() {<br>&nbsp;&nbsp;<span style="color: #ce9178;">// Hi there! I'm a Chrome extension</span><br>&nbsp;&nbsp;<span style="color: #ce9178;">// that makes it easy to summarise:</span><br>&nbsp;&nbsp;<span style="color: #4ec9b0;">documents</span>.<span style="color: #dcdcaa;">summarize</span>();<br>&nbsp;&nbsp;<span style="color: #4ec9b0;">articles</span>.<span style="color: #dcdcaa;">summarize</span>();<br>&nbsp;&nbsp;<span style="color: #4ec9b0;">YouTube</span>.<span style="color: #dcdcaa;">summarize</span>();<br>&nbsp;&nbsp;<span style="color: #ce9178;">// ...all with just a click!</span><br>}</div>
         <img src="assets/logo.png" alt="Logo" class="logo">
     </div>
+
+    <!-- Add touch event support for mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoContainer = document.querySelector('.logo-container');
+            const hoverMessage = document.querySelector('.hover-message');
+
+            // For mobile: show/hide on tap
+            logoContainer.addEventListener('touchstart', function() {
+                hoverMessage.style.opacity = '1';
+            });
+
+            logoContainer.addEventListener('touchend', function() {
+                setTimeout(function() {
+                    hoverMessage.style.opacity = '0';
+                }, 2000); // Hide after 2 seconds
+            });
+        });
+    </script>
 </body>
 </html>
