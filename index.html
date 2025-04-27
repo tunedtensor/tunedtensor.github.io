@@ -6,6 +6,7 @@
     <title>Tuned Tensor</title>
     <link rel="icon" href="assets/logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
@@ -13,29 +14,64 @@
             height: 100%;
             width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            background-color: #121212;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            padding-top: 3rem;
         }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        section {
+            width: 100%;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .headline {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4ec9b0, #569cd6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subheading {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            color: #e0e0e0;
         }
 
         .logo-container {
             max-width: 300px;
-            position: relative;
-            cursor: pointer;
+            margin: 1.5rem 0;
         }
 
         .logo {
@@ -43,126 +79,199 @@
             height: auto;
         }
 
-        .hover-message {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            margin-left: 20px;
-            background-color: #1e1e1e;
-            color: #f8f8f8;
-            padding: 12px 15px;
-            border-radius: 6px;
-            width: 280px;
+        .logo-tagline {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #4ec9b0, #569cd6);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 201, 176, 0.3);
+            margin-top: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(78, 201, 176, 0.4);
+        }
+
+        .faq-section, .privacy-section {
             text-align: left;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 100;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            border: 1px solid #505050;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            line-height: 1.4;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hover-message:after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: -10px;
-            transform: none;
-            border-width: 10px 10px 10px 0;
-            border-style: solid;
-            border-color: transparent #1e1e1e transparent transparent;
+        .faq-section h2, .privacy-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
         }
 
-        .logo-container:hover .hover-message {
-            opacity: 1;
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #cccccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .privacy-note {
+            background-color: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        .privacy-note p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #4ec9b0;
+            margin: 0;
         }
 
         /* Mobile touch support */
         @media (max-width: 768px) {
+            body, html {
+                padding-top: 2rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+
+            .headline {
+                font-size: 2.5rem;
+            }
+
+            .subheading {
+                font-size: 1.2rem;
+            }
+
             .logo-container {
                 max-width: 220px;
             }
 
-            .hover-message {
-                width: 220px;
-                left: 100%;
-                margin-left: 15px;
-                top: 0;
-                font-size: 11px;
-                padding: 8px;
+            .logo-tagline {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
             }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 1.1rem;
+            }
+
+            .faq-section h2, .privacy-section h2 {
+                font-size: 1.8rem;
+            }
+            .faq-item h3 { font-size: 1.1rem; }
+            .faq-item p { font-size: 0.9rem; }
+            .privacy-note p { font-size: 1rem; }
         }
 
         /* Small screens */
         @media (max-width: 600px) {
+            .headline {
+                font-size: 2rem;
+            }
+
+            .subheading {
+                font-size: 1rem;
+            }
+
             .logo-container {
                 max-width: 180px;
             }
 
-            .hover-message {
-                position: absolute;
-                width: 200px;
-                left: 50%;
-                transform: translateX(-50%);
-                top: auto;
-                bottom: 100%;
-                margin-left: 0;
-                margin-top: 0;
-                margin-bottom: 12px;
-                font-size: 10px;
-                padding: 8px;
-                line-height: 1.3;
+            .logo-tagline {
+                font-size: 0.8rem;
             }
 
-            .hover-message:after {
-                top: auto;
-                bottom: -8px;
-                left: 50%;
-                transform: translateX(-50%);
-                border-width: 8px 8px 0 8px;
-                border-color: #1e1e1e transparent transparent transparent;
+            .faq-section h2, .privacy-section h2 {
+                font-size: 1.6rem;
             }
+             .faq-item h3 { font-size: 1rem; }
+             .privacy-note p { font-size: 0.9rem; }
         }
 
         /* Extra small screens */
         @media (max-width: 400px) {
+            .headline {
+                font-size: 1.7rem;
+            }
+
+            .subheading {
+                font-size: 0.9rem;
+            }
+
             .logo-container {
                 max-width: 150px;
             }
 
-            .hover-message {
-                width: 180px;
-                margin-bottom: 10px;
+            .faq-section h2, .privacy-section h2 {
+                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <div class="hover-message"><span style="color: #4ec9b0;">Tuned Tensor</span> <span style="color: #569cd6;">→</span> <span style="color: #dcdcaa;">Your AI Assistant</span><br><br><span style="color: #ce9178;">// Hi there! I help you quickly summarize:</span><br><span style="color: #4ec9b0;">✓ Documents and PDFs</span><br><span style="color: #4ec9b0;">✓ News articles and blogs</span><br><span style="color: #4ec9b0;">✓ YouTube videos and more</span><br><br><span style="color: #ce9178;">// Just one click to save time!</span></div>
-        <img src="assets/logo.png" alt="Logo" class="logo">
+    <div class="container">
+        <section class="main-content">
+            <h1 class="headline">Tired of endless scrolling?</h1>
+            <p class="subheading">Let Tuned Tensor TLDR condense any web page instantly.</p>
+
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Logo" class="logo">
+            </div>
+            <p class="logo-tagline">AI-powered reading shortcuts.</p>
+
+            <button class="cta-button">Add to Chrome</button>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How does it work?</h3>
+                <p>Tuned Tensor uses AI to analyze the content of a webpage and generate a concise summary, extracting the key points for you.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What kind of content can be summarized?</h3>
+                <p>It works best with articles, blog posts, news reports, and similar text-heavy pages. Support for PDFs and videos is planned!</p>
+            </div>
+             <div class="faq-item">
+                <h3>Is it free?</h3>
+                <p>The basic summarization feature is free to use. Advanced features may be introduced later.</p>
+            </div>
+        </section>
+
+        <section class="privacy-section">
+            <h2>Your Privacy Matters</h2>
+            <div class="privacy-note">
+                 <p>No data collected. Your API key, your control.</p>
+            </div>
+        </section>
     </div>
-
-    <!-- Add touch event support for mobile -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoContainer = document.querySelector('.logo-container');
-            const hoverMessage = document.querySelector('.hover-message');
-
-            // For mobile: show/hide on tap
-            logoContainer.addEventListener('touchstart', function() {
-                hoverMessage.style.opacity = '1';
-            });
-
-            logoContainer.addEventListener('touchend', function() {
-                setTimeout(function() {
-                    hoverMessage.style.opacity = '0';
-                }, 2000); // Hide after 2 seconds
-            });
-        });
-    </script>
 </body>
 </html>
