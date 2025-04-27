@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Tuned Tensor</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #121212;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            padding-top: 3rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 900px;
+            padding: 2rem 1rem;
+        }
+
+        .back-link {
+            align-self: flex-start;
+            text-decoration: none;
+            color: #4ec9b0;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-content {
+            width: 100%;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(45deg, #4ec9b0, #569cd6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #cccccc;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        /* Mobile support */
+        @media (max-width: 768px) {
+            body, html {
+                padding-top: 2rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="privacy-content">
+            <h1>Privacy Policy</h1>
+
+            <p>Last Updated: June 2023</p>
+
+            <h2>Introduction</h2>
+            <p>Tuned Tensor TLDR ("we", "our", or "the extension") is a Chrome extension designed to provide AI-powered reading shortcuts. This Privacy Policy explains our privacy-first approach and how your data remains under your control.</p>
+
+            <h2>No Data Collection Policy</h2>
+            <p><strong>We do not collect or store any of your data on our servers.</strong></p>
+            <ul>
+                <li>Your OpenAI API key remains entirely under your control and is stored only locally in your browser</li>
+                <li>All user settings and preferences are stored locally on your device</li>
+                <li>We have no access to your browsing history or summary data</li>
+                <li>We maintain no servers that receive or store your personal information</li>
+            </ul>
+
+            <h2>Local Data Storage</h2>
+            <p>The extension stores the following information <strong>locally</strong> on your device only:</p>
+            <ul>
+                <li><strong>OpenAI API Key</strong>: If provided, stored locally using Chrome's storage API</li>
+                <li><strong>User Settings</strong>: Your preferences (model selection, token limits)</li>
+                <li><strong>Summary History</strong>: Limited history of recent summaries including URLs and timestamps</li>
+            </ul>
+
+            <h2>Data Processing</h2>
+            <ul>
+                <li><strong>Page Content</strong>: When you use the extension, it temporarily processes the content of the webpage you are viewing to generate summaries</li>
+                <li>This processing occurs locally in your browser</li>
+                <li>Content is sent directly from your browser to OpenAI's API for summarization (if you've provided an API key)</li>
+                <li>We (the extension developers) never receive, see, or store this content</li>
+            </ul>
+
+            <h2>Third-Party Services</h2>
+            <ul>
+                <li><strong>OpenAI API</strong>: Content from webpages is sent directly from your browser to OpenAI's API for summarization</li>
+                <li>This data is subject to <a href="https://openai.com/privacy/" style="color: #4ec9b0;">OpenAI's Privacy Policy</a></li>
+                <li>No data is sent to our servers as an intermediary</li>
+            </ul>
+
+            <h2>User Controls</h2>
+            <p>You have complete control over your data:</p>
+            <ul>
+                <li>You can view and clear your summary history at any time</li>
+                <li>You can remove your API key from the extension settings</li>
+                <li>You can uninstall the extension at any time, which will remove all locally stored data</li>
+            </ul>
+
+            <h2>Security</h2>
+            <ul>
+                <li>Your API key and all data remains on your local device</li>
+                <li>We use HTTPS for all communication with third-party APIs</li>
+                <li>No servers of ours store or have access to your data</li>
+            </ul>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our GitHub repository and updating the "Last Updated" date.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@tunedtensor.com" style="color: #4ec9b0;">contact@tunedtensor.com</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
