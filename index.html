@@ -3,88 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuned Tensor</title>
+    <title>Tuned Tensor - AI-Powered Solutions</title>
     <link rel="canonical" href="https://tunedtensor.com/" />
     <link rel="icon" href="assets/logo.ico" type="image/x-icon">
     <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
             height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            background-color: #121212;
+            background-color: #0a0a0a;
             font-family: 'Poppins', sans-serif;
             color: #ffffff;
-            padding-top: 0.5rem;
+            line-height: 1.6;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 900px;
-            text-align: center;
-            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        section {
-            width: 100%;
-            margin-bottom: 3rem;
+        /* Header */
+        header {
             padding: 2rem 0;
-            border-bottom: 1px solid #333;
-        }
-
-        section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
+            border-bottom: 1px solid #222;
         }
 
-        .headline {
-            font-size: 3rem;
-            font-weight: 700;
+        .company-logo {
+            max-width: 200px;
+            height: auto;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #4ec9b0, #569cd6);
+        }
+
+        .company-tagline {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #4ec9b0, #569cd6, #c586c0);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
-        .subheading {
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
             font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 2.5rem;
+            color: #e0e0e0;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background-color: #121212;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
             color: #e0e0e0;
         }
 
-        .logo-container {
-            max-width: 300px;
-            margin: 1.5rem 0;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
 
-        .logo {
-            width: 100%;
+        .product-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(78, 201, 176, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-logo {
+            max-width: 120px;
             height: auto;
+            margin-bottom: 2rem;
         }
 
-        .logo-tagline {
-            font-size: 1rem;
-            color: #a0a0a0;
-            margin-top: 0.5rem;
+        .product-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            color: #b0b0b0;
             margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+        }
+
+        .product-features li {
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ec9b0;
+            font-weight: bold;
         }
 
         .cta-button {
@@ -92,13 +182,16 @@
             color: white;
             border: none;
             padding: 14px 28px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
             border-radius: 30px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 15px rgba(78, 201, 176, 0.3);
-            margin-top: 0;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
         }
 
         .cta-button:hover {
@@ -106,176 +199,195 @@
             box-shadow: 0 7px 20px rgba(78, 201, 176, 0.4);
         }
 
-        .faq-section, .privacy-section {
-            text-align: left;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .cta-button.secondary {
+            background: linear-gradient(45deg, #569cd6, #c586c0);
+            box-shadow: 0 4px 15px rgba(86, 156, 214, 0.3);
         }
 
-        .faq-section h2, .privacy-section h2 {
+        .cta-button.secondary:hover {
+            box-shadow: 0 7px 20px rgba(86, 156, 214, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: #0a0a0a;
             text-align: center;
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: #e0e0e0;
         }
 
-        .faq-item {
-            margin-bottom: 1.5rem;
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .faq-item h3 {
+        .about-text {
             font-size: 1.2rem;
-            font-weight: 600;
-            color: #cccccc;
-            margin-bottom: 0.5rem;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
-        .faq-item p {
-            font-size: 1rem;
-            color: #a0a0a0;
-            line-height: 1.6;
-        }
-
-        .privacy-note {
-            background-color: #1e1e1e;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #444;
+        /* Footer */
+        footer {
+            background-color: #121212;
+            border-top: 1px solid #333;
+            padding: 2rem 0;
             text-align: center;
         }
 
-        .privacy-note p {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #4ec9b0;
-            margin: 0;
+        .footer-content {
+            color: #a0a0a0;
+            font-size: 0.9rem;
         }
 
-        /* Mobile touch support */
+        .footer-content a {
+            color: #4ec9b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-content a:hover {
+            color: #569cd6;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            body, html {
-                padding-top: 1rem;
-            }
             .container {
-                padding: 1.5rem;
+                padding: 0 1rem;
             }
 
-            .headline {
+            .hero-title {
                 font-size: 2.5rem;
             }
 
-            .subheading {
+            .hero-subtitle {
                 font-size: 1.2rem;
             }
 
-            .logo-container {
-                max-width: 220px;
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .logo-tagline {
-                font-size: 0.9rem;
-                margin-bottom: 1.5rem;
+            .product-card {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .company-logo {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-description {
+                font-size: 1rem;
             }
 
             .cta-button {
                 padding: 12px 24px;
-                font-size: 1.1rem;
-            }
-
-            .faq-section h2, .privacy-section h2 {
-                font-size: 1.8rem;
-            }
-            .faq-item h3 { font-size: 1.1rem; }
-            .faq-item p { font-size: 0.9rem; }
-            .privacy-note p { font-size: 1rem; }
-        }
-
-        /* Small screens */
-        @media (max-width: 600px) {
-            .headline {
-                font-size: 2rem;
-            }
-
-            .subheading {
                 font-size: 1rem;
-            }
-
-            .logo-container {
-                max-width: 180px;
-            }
-
-            .logo-tagline {
-                font-size: 0.8rem;
-            }
-
-            .faq-section h2, .privacy-section h2 {
-                font-size: 1.6rem;
-            }
-             .faq-item h3 { font-size: 1rem; }
-             .privacy-note p { font-size: 0.9rem; }
-        }
-
-        /* Extra small screens */
-        @media (max-width: 400px) {
-            .headline {
-                font-size: 1.7rem;
-            }
-
-            .subheading {
-                font-size: 0.9rem;
-            }
-
-            .logo-container {
-                max-width: 150px;
-            }
-
-            .faq-section h2, .privacy-section h2 {
-                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <section class="main-content">
-            <h1 class="headline">Tired of endless scrolling?</h1>
-            <p class="subheading">Let Tuned Tensor TLDR condense any web page instantly.</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="assets/logo.png" alt="Tuned Tensor" class="company-logo">
+            <p class="company-tagline">AI-Powered Solutions for Modern Workflows</p>
+        </div>
+    </header>
 
-            <div class="logo-container">
-                <img src="assets/logo.png" alt="Logo" class="logo">
-            </div>
-            <p class="logo-tagline">AI-powered reading shortcuts.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Welcome to Tuned Tensor</h1>
+            <p class="hero-subtitle">Empowering productivity through intelligent AI solutions that streamline your digital experience</p>
+        </div>
+    </section>
 
-            <a href="https://chromewebstore.google.com/detail/leljoeogdhgadjmcfogoejgjghhaemmj?utm_source=item-share-cb" class="cta-button" style="text-decoration: none; display: inline-block;">Add to Chrome</a>
-        </section>
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <!-- Tuned Tensor TLDR -->
+                <div class="product-card">
+                    <img src="assets/tldr-logo.png" alt="Tuned Tensor TLDR" class="product-logo">
+                    <h3 class="product-title">Tuned Tensor TLDR</h3>
+                    <p class="product-description">
+                        Cut through information overload with AI-powered summarization. Get the essence of any webpage instantly.
+                    </p>
+                    <ul class="product-features">
+                        <li>Instant webpage summarization</li>
+                        <li>YouTube video summaries</li>
+                        <li>Article and blog post condensing</li>
+                        <li>Privacy-focused design</li>
+                        <li>No data collection</li>
+                    </ul>
+                    <a href="https://chromewebstore.google.com/detail/leljoeogdhgadjmcfogoejgjghhaemmj?utm_source=item-share-cb" class="cta-button">Add to Chrome</a>
+                </div>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>How does it work?</h3>
-                <p>Tuned Tensor uses AI to analyze the content of a webpage and generate a concise summary, extracting the key points for you.</p>
+                <!-- Tuned Tensor Spark -->
+                <div class="product-card">
+                    <img src="assets/spark-logo.png" alt="Tuned Tensor Spark" class="product-logo">
+                    <h3 class="product-title">Tuned Tensor Spark</h3>
+                    <p class="product-description">
+                        Extract key points from web content and visualize their relationships using interactive Mermaid diagrams.
+                    </p>
+                    <ul class="product-features">
+                        <li>Intelligent key point extraction</li>
+                        <li>Relationship analysis between concepts</li>
+                        <li>Interactive Mermaid diagram visualization</li>
+                        <li>Analysis history and caching</li>
+                        <li>Beautiful, modern interface</li>
+                    </ul>
+                    <a href="#" class="cta-button secondary">Coming Soon</a>
+                </div>
             </div>
-            <div class="faq-item">
-                <h3>What kind of content can be summarized?</h3>
-                <p>It works best with articles, blog posts, news reports, and even YouTube videos. Support for PDFs is planned!</p>
-            </div>
-             <div class="faq-item">
-                <h3>Is it free?</h3>
-                <p>The basic summarization feature is free to use. Advanced features may be introduced later.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="privacy-section">
-            <h2>Your Privacy Matters</h2>
-            <div class="privacy-note">
-                 <p>No data collected. Your API key, your control.</p>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Tuned Tensor</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    At Tuned Tensor, we believe in the power of AI to transform how we interact with information.
+                    Our mission is to create intelligent tools that enhance human productivity while respecting privacy and user control.
+                </p>
+                <p class="about-text">
+                    From summarizing complex content to automating workflows, our products are designed to give you back your most valuable resource: time.
+                </p>
             </div>
-        </section>
-    </div>
-    <footer style="width: 100%; text-align: center; padding: 1.5rem 0; border-top: 1px solid #333; margin-top: 1rem;">
-        <a href="privacy-policy.html" style="color: #a0a0a0; text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Tuned Tensor. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
